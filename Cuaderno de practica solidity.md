@@ -79,27 +79,6 @@ contract carreraDay{
 }
 ```
 
-#### Usabilidad del tiempo
-Manejando algunos conceptos de tiempo.
-
-``` Solidity 
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.6.0;
-
-contract carreraDay{
-	uint tiempoDisponible = 1 days;
- 
- //El Keyword "now" solo es valido hasta antes de la version 0.7.0
- 	function Now() public view returns(uint){
- 		return now;
- 	}
- 
- 	function obtenerTiempoTerminado() public view returns(uint){
- 		uint tiempo = uint(now + tiempoDisponible);
- 		return tiempo;
- 	}
-}
-```
 
 #### Ahorro de gas con "view"
 ``` Solidity 
