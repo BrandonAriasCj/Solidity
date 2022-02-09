@@ -111,6 +111,7 @@ contract ZombieFactory{
 #### Función de tipo "pure"
 ``` Solidity 
 contract functionPure{
+	//Facilita la realización de operaciones matemáticas.
 	function sumar(uint a, uint b) public pure returns(uint c){
 		c = a + b;
 	}
