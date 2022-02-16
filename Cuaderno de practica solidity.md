@@ -88,6 +88,41 @@ funcion somefuncion(address _skt){
 
 ```
 
+#### Id de estructuras en colección
+``` Solidity
+//SPDX-License-Identifier: MIT
+pragma solidity ^0.4.25;
+
+contract test {
+    event NewPersona(uint id, string name, uint age);
+
+    struct Persona{
+	    string name;
+	    uint age;
+    }
+
+    Persona[] Comunidad;
+    function crearPersona(string _name, uint _age) public {
+	    uint id = Comunidad.push(Persona(_name, _age)) - 1;
+        emit NewPersona(id, _name, _age);
+    }
+}
+
+```
+
+#### keccak256
+``` Solidity
+//SPDX-License-Identifier: MIT
+pragma solidity ^0.4.25;
+//keccak es un algoritmo hash de cifrado.
+contract test{
+    function kaccek(string _name) public view returns(uint) {
+	    uint id = uint(keccak256(abi.encodePacked(_name)));
+        return id;
+    }
+}
+```
+
 #### Estructuras y  matrices.
 ``` Solidity
 //SPDX-License-Ientifier: MIT
