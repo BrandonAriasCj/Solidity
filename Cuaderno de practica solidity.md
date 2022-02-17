@@ -88,6 +88,25 @@ funcion somefuncion(address _skt){
 
 ```
 
+#### Llamar atributos de estructuras en colección
+``` Solidity
+pragma solidity ^0.4.25;
+
+struct Gato{
+	uint fechaAdopcion;
+	string nombre;
+}
+
+//supongamos que ya tengamos la base de datos de gatos en el array
+//cada gato identiifcado con su id
+Gato[] Gatos;
+fuction CuandoLoAdoptaron(uint _id) public returns(uint){
+	uint fecha = Gatos[_id].fechaAdopcion;
+	return fecha;
+}
+
+```
+
 #### Id de estructuras en colección
 ``` Solidity
 //SPDX-License-Identifier: MIT
