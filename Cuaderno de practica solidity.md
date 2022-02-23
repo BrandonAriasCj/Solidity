@@ -52,6 +52,27 @@ function obtenerUltimoValorRetorno() external {
 }
 ```
 
+#### Apuntadores
+``` Solidity
+pragma solidity ^0.4.19;
+/* Son objetos en programacion que sirven para almacenar direcciones de memoria */
+
+contract Apuntador{
+	struct Persona{
+		string name;
+		uint DNI;
+	}
+	
+	//Digamos que se tiene el registro de toda la ciudadania de una ciudad.
+	Persona[] Ciudadania;
+	function CambiarNombre(uint _id, string _NewName) public {
+		Persona storage Fulano = Ciudadania[_id];
+		// Se puede especificar "storage" o "memory" segun los requerimientos.
+		Fulano.name = _NewName;
+	}
+}
+```
+
 #### Cómo relizar una herencia e importarlo
 ``` Solidity
 /* Para poder heredar un contrato es necesario comenzar el contrato
